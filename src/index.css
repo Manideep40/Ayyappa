@@ -1,0 +1,164 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Sacred design system for Ayyappa devotees platform
+All colors MUST be HSL. Inspired by sacred saffron, gold, and spiritual purples.
+*/
+
+@layer base {
+  :root {
+    /* Sacred color palette */
+    --background: 42 15% 97%; /* Warm off-white like temple marble */
+    --foreground: 25 25% 15%; /* Deep brown for readability */
+
+    --card: 45 25% 98%;
+    --card-foreground: 25 25% 15%;
+
+    --popover: 45 25% 98%;
+    --popover-foreground: 25 25% 15%;
+
+    /* Sacred saffron primary */
+    --primary: 35 85% 55%; /* Rich saffron */
+    --primary-foreground: 45 25% 98%;
+    --primary-glow: 40 90% 70%; /* Lighter saffron for glows */
+
+    /* Golden secondary */
+    --secondary: 45 70% 85%; /* Soft gold */
+    --secondary-foreground: 25 25% 15%;
+
+    /* Spiritual purple accents */
+    --muted: 270 15% 95%;
+    --muted-foreground: 270 8% 45%;
+
+    --accent: 280 40% 25%; /* Deep spiritual purple */
+    --accent-foreground: 45 25% 98%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 45 20% 88%;
+    --input: 45 20% 92%;
+    --ring: 35 85% 55%;
+
+    /* Sacred gradients */
+    --gradient-sacred: linear-gradient(135deg, hsl(35 85% 55%), hsl(45 80% 65%));
+    --gradient-spiritual: linear-gradient(180deg, hsl(280 40% 25%), hsl(270 35% 35%));
+    --gradient-temple: linear-gradient(45deg, hsl(40 90% 70%), hsl(35 85% 55%));
+    --gradient-divine: radial-gradient(circle, hsl(45 90% 85%) 0%, hsl(35 85% 55%) 100%);
+
+    /* Sacred shadows */
+    --shadow-sacred: 0 10px 40px -10px hsl(35 85% 55% / 0.3);
+    --shadow-spiritual: 0 8px 32px -8px hsl(280 40% 25% / 0.25);
+    --shadow-divine: 0 0 60px hsl(40 90% 70% / 0.4);
+
+    /* Sacred animations */
+    --transition-sacred: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-gentle: all 0.3s ease-in-out;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark sacred theme */
+    --background: 25 30% 8%; /* Deep temple night */
+    --foreground: 45 25% 95%;
+
+    --card: 25 25% 10%;
+    --card-foreground: 45 25% 95%;
+
+    --popover: 25 25% 10%;
+    --popover-foreground: 45 25% 95%;
+
+    --primary: 35 85% 55%; /* Keep sacred saffron */
+    --primary-foreground: 25 30% 8%;
+    --primary-glow: 40 90% 70%;
+
+    --secondary: 25 20% 18%;
+    --secondary-foreground: 45 25% 95%;
+
+    --muted: 270 15% 15%;
+    --muted-foreground: 270 8% 65%;
+
+    --accent: 280 40% 35%; /* Lighter purple for dark mode */
+    --accent-foreground: 45 25% 95%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 25 15% 20%;
+    --input: 25 15% 15%;
+    --ring: 35 85% 55%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+
+  /* Sacred typography */
+  .text-sacred {
+    @apply bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent;
+  }
+
+  .text-divine {
+    @apply text-accent font-medium;
+  }
+
+  /* Sacred animations */
+  .animate-sacred-glow {
+    animation: sacredGlow 3s ease-in-out infinite alternate;
+  }
+
+  .animate-gentle-float {
+    animation: gentleFloat 4s ease-in-out infinite;
+  }
+
+  @keyframes sacredGlow {
+    from { 
+      box-shadow: 0 0 20px hsl(var(--primary) / 0.3);
+    }
+    to { 
+      box-shadow: 0 0 40px hsl(var(--primary) / 0.6), 0 0 60px hsl(var(--primary-glow) / 0.4);
+    }
+  }
+
+  @keyframes gentleFloat {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+
+  /* Sacred glass effect */
+  .glass-sacred {
+    @apply backdrop-blur-lg bg-background/80 border border-primary/20;
+  }
+}
